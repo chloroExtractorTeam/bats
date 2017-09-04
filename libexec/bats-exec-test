@@ -292,7 +292,7 @@ bats_perform_test() {
     trap "bats_debug_trap \"\$BASH_SOURCE\"" debug
     trap "bats_error_trap" err
     trap "bats_teardown_trap" exit
-    "$BATS_TEST_NAME" >>"$BATS_OUT" 2>&1
+    "$BATS_TEST_NAME" >>"$BATS_OUT" 2>&1 3>-
     BATS_TEST_COMPLETED=1
 
   else
